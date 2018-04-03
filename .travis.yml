@@ -1,3 +1,18 @@
+#language: java
+#sudo: false
+#script: mvn clean verify package -DskipTests=true
+
+sudo: required
 language: java
-sudo: false
-script: mvn clean verify package -DskipTests=true
+script: mvn verify
+services:
+  - docker
+deploy:
+  provider: script
+  script: bash docker_push.sh
+  skip_cleanup: true
+  on:
+    branch: master
+addons:
+  artifacts: true
+    
