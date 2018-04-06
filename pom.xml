@@ -131,11 +131,11 @@
 			<version>${h2.version}</version>
 			<scope>runtime</scope>
 		</dependency>
-		<!-- <dependency>
+		<dependency>
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpFtpClient</artifactId>
 			<version>3.0.3</version>
-		</dependency> -->
+		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
