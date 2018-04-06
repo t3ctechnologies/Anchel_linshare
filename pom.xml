@@ -136,7 +136,7 @@
 			<artifactId>WaarpFtpClient</artifactId>
 			<version>3.0.3</version>
 			<scope>system</scope>
-			<systemPath>${TRAVIS_BUILD_DIR}/WEB-INF/lib/WaarpFtpClient-3.0.3.jar</systemPath>
+			<systemPath>${TRAVIS_REPO_SLUG}/WEB-INF/lib/WaarpFtpClient-3.0.3.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
