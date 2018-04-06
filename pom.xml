@@ -135,6 +135,8 @@
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpFtpClient</artifactId>
 			<version>3.0.3</version>
+			<scope>system</scope>
+			<systemPath>./lib/WaarpFtpClient-3.0.3.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
