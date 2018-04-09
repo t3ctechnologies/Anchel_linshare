@@ -904,34 +904,6 @@
 					<skip>true</skip>
 				</configuration>
 			</plugin>
-			<!-- maven-deploy-plugin -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.8.2</version>
-				<configuration>
-					<skip>false</skip>
-				</configuration>
-			</plugin>
-			<!-- Maven Jetty Plugin 9.x : run the application using "mvn jetty:run" -->
-			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.3.3.v20150827</version>
-				<configuration>
-					<scanIntervalSeconds>10</scanIntervalSeconds>
-					<webApp>
-						<contextPath>/linshare</contextPath>
-					</webApp>
-					<!-- -Djetty.port=8080 -->
-					<httpConnector>
-						<port>8080</port>
-					</httpConnector>
-				</configuration>
-				<!-- not supported yet <requestLog implementation="org.mortbay.jetty.NCSARequestLog"> 
-					This doesn't do anything for Jetty, but is a workaround for a Maven bug that 
-					prevents the requestLog from being set. <append>true</append> </requestLog> -->
-			</plugin>
 			<!-- cobertura (test coverage) -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -987,7 +959,7 @@
 				</executions>
 			</plugin>
 			<!--generate stub client SOAP for test purpose mvn cxf-codegen:wsdl2java -->
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-codegen-plugin</artifactId>
 				<version>${cxf.version}</version>
@@ -1005,14 +977,14 @@
 								<extraarg>http://webservice.linshare.linagora.org/=org.linagora.linshare.webservice.test.soap</extraarg>
 							</extraargs>
 						</wsdlOption>
-						<!-- <wsdlOption> <wsdl>http://localhost:8080/linshare/webservice/soap/share?wsdl</wsdl> 
+						<wsdlOption> <wsdl>http://localhost:8080/linshare/webservice/soap/share?wsdl</wsdl> 
 							<extraargs> <extraarg>-client</extraarg> <extraarg>-verbose</extraarg> <extraarg>-p</extraarg> 
 							<extraarg>http://org/linagora/linshare/webservice/=org.linagora.linshare.webservice.test.soap</extraarg> 
 							<extraarg>-p</extraarg> <extraarg>http://webservice.linshare.linagora.org/=org.linagora.linshare.webservice.test.soap</extraarg> 
-							</extraargs> </wsdlOption> -->
+							</extraargs> </wsdlOption>
 					</wsdlOptions>
 				</configuration>
-			</plugin>
+			</plugin>  -->
 			<!-- hibernate tool : ?? -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
