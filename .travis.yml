@@ -1,12 +1,7 @@
-#language: java
-#sudo: false
-#script: mvn clean verify package -DskipTests=true
-
 sudo: required
 language: java
 script: mvn verify
 services:
-  - mysql
   - docker
 deploy:
   provider: script
