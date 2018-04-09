@@ -782,7 +782,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>linshare-core</finalName>
+		<finalName>linshare</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
