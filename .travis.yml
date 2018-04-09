@@ -17,4 +17,5 @@ deploy:
     branch: master
 addons:
   artifacts: true
+  mariadb: '10.0'
     
