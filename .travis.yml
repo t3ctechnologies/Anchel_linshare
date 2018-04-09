@@ -1,6 +1,10 @@
 sudo: required
 language: java
 script: mvn verify
+test:
+  adapter: sqlite3
+  database: ":memory:"
+  timeout: 500
 services:
   - docker
 deploy:
@@ -11,4 +15,3 @@ deploy:
     branch: master
 addons:
   artifacts: true
-    
