@@ -1,6 +1,6 @@
 sudo: required
 language: java
-script: mvn clean build
+script: mvn clean compile package
 services:
   - docker
 deploy:
