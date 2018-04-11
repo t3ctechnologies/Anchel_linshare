@@ -15,3 +15,8 @@ This is the T3C Version
 Code status:
 ------------
 [![Build Status](https://travis-ci.org/t3ctechnologies/Anchel_linshare.svg?branch=master)](https://travis-ci.org/t3ctechnologies/Anchel_linshare)
+
+License
+----
+
+MIT
