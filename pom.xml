@@ -135,7 +135,7 @@
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpFtpClient</artifactId>
 			<version>3.0.3</version>
-			<!-- below 2 lines are added for travis perpus -->
+			<!-- below 2 lines are added for TRAVIS purpose -->
 			<scope>system</scope>
 			<systemPath>${TRAVIS_BUILD_DIR}/src/main/webapp/WEB-INF/lib/WaarpFtpClient-3.0.3.jar</systemPath>
 		</dependency>
