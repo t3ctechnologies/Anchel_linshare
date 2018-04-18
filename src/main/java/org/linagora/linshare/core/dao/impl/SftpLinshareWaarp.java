@@ -5,12 +5,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.Properties;
 
 import org.linagora.linshare.core.common.FtpClientConfiguration;
 
 public class SftpLinshareWaarp {
-	
+
 		public void insert(String fileName2, String uuid2) {
 		PreparedStatement preparedStmt = null;
 		Connection conn = null;
