@@ -218,8 +218,18 @@ public class JcloudObjectStorageFileDataStoreImpl implements FileDataStore {
 			String gateway_file = gateway_path.concat(new File(fileName).getName());
 			boolean secondMethodStatus = false;
 			FtpClient.init(configArray);
-			Thread.sleep(10 * 1000);
-			FtpClient.init(configArray);
+			for (int i = 10; i < 1000; i++) {
+-				if (new File(gateway_file).exists()) {
+-					secondMethodStatus = true;
+-					break;
+-				} else {
+-					Thread.sleep(i * 1000);
+-				}
+-			}
+-			if (secondMethodStatus) {
+-				FtpClient.init(configArray);
+-			}
+-			System.err.println("********************FILE DOWNLOADING IS COMPLETED*******************");
 			// TODO Deleting GatewayFile
 			new File(gateway_file).delete();
 		} catch (IOException | InterruptedException e) {
