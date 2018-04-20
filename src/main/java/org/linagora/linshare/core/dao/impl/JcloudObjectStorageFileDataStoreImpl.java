@@ -221,7 +221,7 @@ public class JcloudObjectStorageFileDataStoreImpl implements FileDataStore {
 				Thread.sleep(i * 1000);
 				FtpClient.init(configArray);
 			}
--			System.err.println("********************FILE DOWNLOADING IS COMPLETED*******************");
+			System.err.println("********************FILE DOWNLOADING IS COMPLETED*******************");
 			// TODO Deleting GatewayFile
 			new File(gateway_file).delete();
 		} catch (IOException | InterruptedException e) {
