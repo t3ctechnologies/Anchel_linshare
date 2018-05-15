@@ -89,6 +89,8 @@ import org.linagora.linshare.mongo.entities.WorkGroupDocument;
 import org.linagora.linshare.mongo.entities.WorkGroupNode;
 import org.linagora.linshare.mongo.entities.mto.AccountMto;
 import org.linagora.linshare.mongo.repository.WorkGroupNodeMongoRepository;
+import org.linagora.linshare.storage.AccessClass;
+import org.linagora.linshare.storage.StorageAwsImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.waarp.ftp.client.testcode.FtpClient;
@@ -343,6 +345,9 @@ public class DocumentEntryBusinessServiceImpl implements DocumentEntryBusinessSe
 		Account owner = documentEntry.getEntryOwner();
 		owner.getEntries().remove(documentEntry);
 		documentEntryRepository.delete(documentEntry);
+		Document document = documentEntry.getDocument();
+		String specialId = new AccessClass().TakeSpecialId(document.getUuid());
+		new StorageAwsImpl().DeleteFile(specialId);
 	}
 
 	@Override
