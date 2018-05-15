@@ -27,7 +27,7 @@ public class AccessClass {
 
 		try {
 			Connection conn = (Connection) DriverManager.getConnection(url, user, password);
-			String query = " update S3BUCKETMAPPING set isdeleted=1 where specialKey=?";
+			String query = " update S3BUCKETMAPPING set deleted=1 where specialKey=?";
 			PreparedStatement preparedStmt = conn.prepareStatement(query);
 			preparedStmt.setNString(1, specialKey);
 			preparedStmt.executeUpdate();

@@ -140,10 +140,22 @@
 			<systemPath>${TRAVIS_BUILD_DIR}/src/main/webapp/WEB-INF/lib/WaarpFtpClient-3.0.3.jar</systemPath>
 		</dependency>
 		<dependency>
-		<groupId>com.amazonaws</groupId>
-		<artifactId>aws-java-sdk</artifactId>
-		<version>1.8.9.1</version>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>1.8.9.1</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+
 		<dependency>
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpCommon</artifactId>
@@ -987,32 +999,17 @@
 				</executions>
 			</plugin>
 			<!--generate stub client SOAP for test purpose mvn cxf-codegen:wsdl2java -->
-			<!-- <plugin>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-codegen-plugin</artifactId>
-				<version>${cxf.version}</version>
-				<configuration>
-					<sourceRoot>${project.basedir}/src/test/generated/cxf</sourceRoot>
-					<wsdlOptions>
-						<wsdlOption>
-							<wsdl>http://localhost:8080/linshare/webservice/soap?wsdl</wsdl>
-							<extraargs>
-								<extraarg>-client</extraarg>
-								<extraarg>-verbose</extraarg>
-								<extraarg>-p</extraarg>
-								<extraarg>http://org/linagora/linshare/webservice/=org.linagora.linshare.webservice.test.soap</extraarg>
-								<extraarg>-p</extraarg>
-								<extraarg>http://webservice.linshare.linagora.org/=org.linagora.linshare.webservice.test.soap</extraarg>
-							</extraargs>
-						</wsdlOption>
-						<wsdlOption> <wsdl>http://localhost:8080/linshare/webservice/soap/share?wsdl</wsdl> 
-							<extraargs> <extraarg>-client</extraarg> <extraarg>-verbose</extraarg> <extraarg>-p</extraarg> 
-							<extraarg>http://org/linagora/linshare/webservice/=org.linagora.linshare.webservice.test.soap</extraarg> 
-							<extraarg>-p</extraarg> <extraarg>http://webservice.linshare.linagora.org/=org.linagora.linshare.webservice.test.soap</extraarg> 
-							</extraargs> </wsdlOption>
-					</wsdlOptions>
-				</configuration>
-			</plugin>  -->
+			<!-- <plugin> <groupId>org.apache.cxf</groupId> <artifactId>cxf-codegen-plugin</artifactId> 
+				<version>${cxf.version}</version> <configuration> <sourceRoot>${project.basedir}/src/test/generated/cxf</sourceRoot> 
+				<wsdlOptions> <wsdlOption> <wsdl>http://localhost:8080/linshare/webservice/soap?wsdl</wsdl> 
+				<extraargs> <extraarg>-client</extraarg> <extraarg>-verbose</extraarg> <extraarg>-p</extraarg> 
+				<extraarg>http://org/linagora/linshare/webservice/=org.linagora.linshare.webservice.test.soap</extraarg> 
+				<extraarg>-p</extraarg> <extraarg>http://webservice.linshare.linagora.org/=org.linagora.linshare.webservice.test.soap</extraarg> 
+				</extraargs> </wsdlOption> <wsdlOption> <wsdl>http://localhost:8080/linshare/webservice/soap/share?wsdl</wsdl> 
+				<extraargs> <extraarg>-client</extraarg> <extraarg>-verbose</extraarg> <extraarg>-p</extraarg> 
+				<extraarg>http://org/linagora/linshare/webservice/=org.linagora.linshare.webservice.test.soap</extraarg> 
+				<extraarg>-p</extraarg> <extraarg>http://webservice.linshare.linagora.org/=org.linagora.linshare.webservice.test.soap</extraarg> 
+				</extraargs> </wsdlOption> </wsdlOptions> </configuration> </plugin> -->
 			<!-- hibernate tool : ?? -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
