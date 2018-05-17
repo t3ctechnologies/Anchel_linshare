@@ -11,7 +11,7 @@ import org.linagora.linshare.core.common.FtpClientConfiguration;
 
 public class SftpLinshareWaarp {
 
-	public void insert(String fileName2, String uuid2) {
+	public void insert(String uuid, String file) {
 		PreparedStatement preparedStmt = null;
 		Connection conn = null;
 		Properties properties = new FtpClientConfiguration().getclientProperties();
@@ -20,16 +20,20 @@ public class SftpLinshareWaarp {
 		String password = properties.getProperty("linshare.db.password");
 		try {
 			conn = DriverManager.getConnection(url, user, password);
-			String query = " insert into S3FILENAMEHANDLER(filename,uuid,processedOn)" + " values (?,?,?)";
+			String query = " insert into S3BUCKETMAPPING(filename,uuid,processedOn,deleted)" 
+							+ " values (?,?,?,?)";
 			preparedStmt = conn.prepareStatement(query);
 
-			preparedStmt.setString(1, fileName2);
-			preparedStmt.setString(2, uuid2);
+			preparedStmt.setString(1, file);
+			preparedStmt.setString(2, uuid);
 			preparedStmt.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
+			preparedStmt.setBoolean(4, false);
+			
 			preparedStmt.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
+	
 }

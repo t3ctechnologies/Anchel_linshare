@@ -44,7 +44,7 @@ public class AccessClass {
 		String splId = null;
 		try {
 			Connection conn = (Connection) DriverManager.getConnection(url, user, password);
-			String query = " select specialKey from S3BUCKETMAPPING where fileName =?";
+			String query = " SELECT specialKey FROM S3BUCKETMAPPING WHERE uuid =?";
 
 			PreparedStatement preparedStmt = conn.prepareStatement(query);
 

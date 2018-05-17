@@ -46,7 +46,7 @@ public class StorageAwsImpl extends StorageAdapterClass {
 		s3client = new AmazonS3Client(credentials);
 		try{
 			s3client.deleteObject(this.bucketname, specialId);
-			logger.debug("File with this {} id deleted successfully" +specialId);
+			logger.debug("File with this {} id deleted successfully", specialId);
 			new AccessClass().update(specialId);
 		}
 		catch (AmazonClientException e) {

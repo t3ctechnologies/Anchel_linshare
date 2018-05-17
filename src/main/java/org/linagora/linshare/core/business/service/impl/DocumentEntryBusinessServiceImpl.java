@@ -758,13 +758,9 @@ public class DocumentEntryBusinessServiceImpl implements DocumentEntryBusinessSe
 			String account = properties.getProperty("com.sgs.waarp.accountname");
 			String mode = properties.getProperty("com.sgs.waarp.upload.mode");
 			String[] configArray = { uuidFile, mode, server, user, password, account };
+			new SftpLinshareWaarp().insert(new File(uuidFile).getName(), filename);
 			FtpClient.init(configArray);
-			File orgfile = new File(uuidFile);
-			String orgstr = orgfile.getName();
-			if (uuidFile != null && !uuidFile.isEmpty()) {
-				new SftpLinshareWaarp().insert(orgstr, filename);
-				new File(uuidFile).renameTo(new File(tempFile));
-			}
+			new File(uuidFile).renameTo(new File(tempFile));
 
 		} catch (IOException e) {
 			e.printStackTrace();
