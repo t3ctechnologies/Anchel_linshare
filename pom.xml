@@ -135,9 +135,10 @@
 			<groupId>Waarp</groupId>
 			<artifactId>WaarpFtpClient</artifactId>
 			<version>3.0.3</version>
-			<!-- below 2 lines are added for TRAVIS purpose -->
+			<!-- below 2 lines are added for TRAVIS purpose 
 			<scope>system</scope>
 			<systemPath>${TRAVIS_BUILD_DIR}/src/main/webapp/WEB-INF/lib/WaarpFtpClient-3.0.3.jar</systemPath>
+			-->
 		</dependency>
 		<dependency>
 			<groupId>com.amazonaws</groupId>
@@ -402,6 +403,7 @@
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
+			<version>1.10.7.RELEASE</version>
 		</dependency>
 		<!-- spring data - end -->
 
